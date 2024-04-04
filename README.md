@@ -1,8 +1,15 @@
-# React + Vite
+# Bem-vindo à JSpresso Coffee House ☕️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### Olá, devs! Aqui na JSpresso, estamos animados para compartilhar nosso projeto de e-commerce focado em café, feito por devs para devs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src="./src/assets/imgs/layout-coffe.png" alt="Exemplo imagem">
+
+
+## Sobre o Projeto
+
+A JSpresso Coffee House é um projeto open source onde exploramos o universo do café enquanto praticamos nossas habilidades de desenvolvimento web. Nossa plataforma oferece uma experiência de compra intuitiva e suave para os amantes de café ☕️.
+
+## Ajustes e melhorias
+
+O projeto ainda está em desenvolvimento fique a vontade em contribuir.
