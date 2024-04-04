@@ -1,0 +1,27 @@
+@import './fonts.css';
+
+/* CORES PRINCIPAIS */
+:root {
+  --primary-color: #F9D9AA;
+  --secundary-color: #FF902B;
+  --button-color: #2F2105;
+}
+
+
+/* FONTS PRINCIPAIS */
+:root {
+  --primary-font: font-family: "Poppins", sans-serif;
+  --secundary-font: font-family: "Amatic SC", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+body {
+  overflow-x: hidden;
+}
+

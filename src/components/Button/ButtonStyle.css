@@ -1,0 +1,49 @@
+.container-btn {
+    width: 11rem;
+    height: 2rem;
+    margin: 1rem;
+    display: flex;
+}
+
+
+/* ESTILIZAÇÃO DO BOTÃO */
+
+.btn-principal {
+    position: relative;
+    width: 11rem;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: .7rem;
+    background: var(--button-color);
+
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+
+    text-decoration: none;
+    border-radius: 35px;
+}
+
+.btn-principal::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 25%;
+    right: 0rem;
+    background-image: url(../../assets/svg/car-icon.svg);
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* MEDIA QUERYS */
+
+
+@media (max-width: 1024px) {}
+@media (max-width: 767px) {}
+@media (max-width: 418px) {}
+@media (max-width: 320px) {}
