@@ -1,7 +1,7 @@
 
 
 .fav-contain {
-    width: 22vw;
+    width: 23vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,6 +45,17 @@
 
 
 /* MEDIA QUERYS */
+
+@media (max-width: 1366px) {
+    .fav-contain {
+        width: 100%;
+    }
+    .img-component {
+        width: 15rem;
+        height: 35%;
+    }
+
+}
 
 
 

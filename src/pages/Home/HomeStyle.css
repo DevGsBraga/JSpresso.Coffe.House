@@ -1,3 +1,19 @@
+/* IMPORTES */
+@import url(./BannerStyle.css);
+@import url(./DeliveryStyle.css);
+@import url(./InputHeader.css);
+
+
+
+
+
+
+
+
+
+
+
+
 .container-cabecalho {
     width: 100vw;
     height: 60rem;
@@ -80,7 +96,7 @@
 }
 
 
-.favorites-bg {
+/* .favorites-bg {
     width: 100%;
     height: 15rem;
     display: flex;
@@ -89,16 +105,7 @@
     background-image: url(../../assets//svg/vetor-components.svg);
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-
-
-
-
-
-
-
-
+} */
 
 
 
@@ -131,12 +138,13 @@
 
 
     .container-favorites {
-        margin: 14rem 0;
         transform: none;
+
     }
     .container-favorites::after {
         transform: none;
         width: 100%;
+        display: none;
 
     }
 
