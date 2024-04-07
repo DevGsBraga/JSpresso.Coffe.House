@@ -5,6 +5,9 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 15rem 0;
+    background-image: url(../../assets//imgs/Delivery/bg-delivery.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 
@@ -14,7 +17,11 @@
     width: 100vw;
     height: 20vh;
     font-size: large;
-    padding-left: 11rem;
+    padding:2rem 11rem;
+}
+
+.title-border {
+    border-bottom: 3px solid orange;
 }
 
 
@@ -26,11 +33,28 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+
 }
 
 
 /* FIM DA ESTILIZAÇÃO */
 
+
+
+/* ESTILIZAÇÃO DA DIV DOS COMPONENTES DE DELIVERY */
+
+.elements-gp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    text-align: center;
+}
+
+.elements-gp img {
+    width: 10rem;
+}
 
 
 
@@ -41,19 +65,65 @@
     .delivery-elements {
         flex-direction: column;
         text-align: center;
+
     }
 
     .contain-delivery {
-        margin: 85rem 0;
+        margin: 65rem 0rem;
+        background-size: cover;
     }
 
     .delivery-title {
-        width: 100%;
-        font-size: medium;
+        font-size: x-large;
+        padding: 0rem;
         text-align: center;
-        padding-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
-@media (max-width: 767px) {}
-@media (max-width: 418px) {}
+@media (max-width: 767px) {
+    .delivery-elements {
+        flex-direction: column;
+        text-align: center;
+        transform: translateY(-2rem);
+    }
+
+    .contain-delivery {
+        margin: 85rem 0rem;
+        flex-direction: row;
+        background-size: cover;
+    }
+
+    .delivery-title {
+        font-size: large;
+        padding: 0rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (max-width: 418px) {
+    .delivery-elements {
+        flex-direction: column;
+        text-align: center;
+        transform: translateY(-2rem);
+    }
+
+    .contain-delivery {
+        margin: 85rem 0rem;
+        flex-direction: row;
+        background-size: cover;
+    }
+
+    .delivery-title {
+        font-size: large;
+        padding: 0rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 @media (max-width: 320px) {}

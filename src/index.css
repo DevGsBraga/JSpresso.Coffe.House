@@ -10,8 +10,8 @@
 
 /* FONTS PRINCIPAIS */
 :root {
-  --primary-font: font-family: "Poppins", sans-serif;
-  --secundary-font: font-family: "Amatic SC", sans-serif;
+  --primary-font: "Poppins", sans-serif;
+  --secundary-font: "Amatic SC", sans-serif;
 }
 
 * {
@@ -23,5 +23,6 @@
 
 body {
   overflow-x: hidden;
+  font-family: var(--primary-font);
 }
 

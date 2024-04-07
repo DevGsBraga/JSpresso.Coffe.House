@@ -16,7 +16,7 @@
 
 .container-cabecalho {
     width: 100vw;
-    height: 60rem;
+    height: 65rem;
     background: var(--primary-color);
     z-index: 999;
 }
@@ -80,21 +80,33 @@
     position: absolute;
     width: 50%;
     height: 100%;
-    top: 0;
+    top: 1rem;
     left: 0;
     transform: translate(-5rem, -5rem);
     background-image: url(../../assets/svg/coffe-particles.svg);
     z-index: 1;
+    opacity: .5;
 }
 
 .layout-container-favorites {
-    width: 100;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
 }
 
+.favorites-titles {
+    width: 100%;
+    height: 20vh;
+    z-index: 996;
+    margin: 2rem;
+    padding-left: 2rem;
+}
+
+.title-borde {
+    border-bottom: 4px solid orange;
+}
 
 /* .favorites-bg {
     width: 100%;

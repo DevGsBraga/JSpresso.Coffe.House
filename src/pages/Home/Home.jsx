@@ -2,18 +2,20 @@ import './HomeStyle.css';    // CSS GERAL
 
 
 
-// LINKS
-import { Link } from 'react-router-dom';
+// ANIMAÇÃO
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP);
 
 // IMAGENS
-import logo from "../../assets/svg/logo-coffe.svg";
 import banner from "../../assets/svg/banner-coffe.svg";
-import { RiSearchLine } from 'react-icons/ri';
-import { LiaShoppingCartSolid } from "react-icons/lia";
 
 // IMPORTE DE COMPONENTS
 import Button from '../../components/Button/Button';
 import FavComponent from '../../components/FavoriteComponent/FavComponent';
+import NavegacaoBar from '../../components/Navegacao/NavegacaoBar';
 
 // IMPORTE DAS FOTOS DOS COMPONENTS FAVORITOS
 import foto1 from '../../assets/imgs/foto1.svg';
@@ -28,42 +30,53 @@ import coffeEnd from '../../assets/imgs/Delivery/coffeEnd.svg';
 
 
 const Home = () => {
+
+    // AQUI FICA TODA O CÓDIGO DE ANIMAÇÃO
+
+    const container = useRef();
+
+    useGSAP(() => {
+
+      gsap.fromTo('.banners-titles', {
+          opacity: 0,
+          x: 200
+        }, {
+            duration:1,
+            opacity: 1,
+            x: 0
+        });
+
+    }, ); // <-- scope is for selector text (optional)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <>
         <div className="container-cabecalho">
-            <nav className="cabecalho-nav-bar">
-
-                <div className='nav-bar-content'>
-                    <img src={logo} alt="" />
-                        <ul className='content-list'>
-                            <Link className='gp-list-nav-bar' to={'/'}><span className='content-sobre'>Sobre Nós</span></Link>
-                            <Link className='gp-list-nav-bar' to={'/'}>Nossos Produtos</Link>
-                            <Link className='gp-list-nav-bar' to={'/'}>Delivery</Link>
-                        </ul>
-                </div>
-
-            {/* CÓDIGO DO INPUT DE BUSCA */}
-
-                            <div className='content-search'>
-                                <div className="search-input">
-                                    <RiSearchLine className="search-icon" />
-                                        <input type="text" placeholder="Capuccino" />
-                                </div>
-                                <div>
-                                    <LiaShoppingCartSolid size={'32px'}  />
-                                </div>
-                            </div>
-
-
-        </nav>
+            <NavegacaoBar />
 
             {/* FIM DO CABEÇALHO DE NAVEGAÇÃO  */}
-
 
             {/* ------ BANNERS PRINCIPAIS ------ */}
 
                         <div className='container-banners'>
-                            <div className='banners-titles'>
+                            <div className='banners-titles' ref={container}>
 
                                 <div className='title-principal'>
                                     <h2>Recarregue suas <b>energias</b> com café, porque os bugs não vão consertar a si mesmos!</h2>
@@ -90,6 +103,11 @@ const Home = () => {
             {/* DIV DE COMPONENTS PARA DESTACAR OS FAVORITOS */}
 
                                             <div className='container-favorites'>
+                                                <div className='favorites-titles'>
+                                                    <h2>Os mais <span className='title-borde'>pedidos</span></h2>
+                                                </div>
+
+
                                                     <div className='layout-container-favorites'>
 
                                                        <div className='favorites-components'>
@@ -99,11 +117,11 @@ const Home = () => {
                                                        </div>
 
                                                        <div className='favorites-components'>
-                                                        <FavComponent nome={'Full Stack Fuel'} preco={'R$ 7,49'} foto={foto2} />
+                                                        <FavComponent nome={'Full Stack Fuel'} preco={'R$ 9,49'} foto={foto2} />
                                                        </div>
 
                                                        <div className='favorites-components'>
-                                                        <FavComponent nome={'HTML Haze'} preco={'R$ 7,49'} foto={foto3} />
+                                                        <FavComponent nome={'HTML Haze'} preco={'R$ 4,49'} foto={foto3} />
                                                        </div>
 
                                                        <div className='favorites-components'>
@@ -125,21 +143,27 @@ const Home = () => {
 
                                                     <div className='delivery-title'>
                                                         <h2>Como funciona nosso
-                                                            <span> Delivery</span>
+                                                            <span className='title-border'> Delivery</span>
                                                         </h2>
                                                     </div>
 
                                                             <div className='delivery-elements'>
-                                                                <div>
+                                                                <div className='elements-gp'>
                                                                     <img src={coffe} alt="" />
+                                                                    <h3>Escolha seu café</h3>
+                                                                    <p>há mais de 20 cafés para você!</p>
                                                                 </div>
 
-                                                                <div>
+                                                                <div className='elements-gp'>
                                                                     <img src={car} alt="" />
+                                                                    <h3>Nós entregamos para você</h3>
+                                                                    <p>Escolha o serviço de entrega</p>
                                                                 </div>
 
-                                                                <div>
+                                                                <div className='elements-gp'>
                                                                     <img src={coffeEnd} alt="" />
+                                                                    <h3>Aproveite seu café</h3>
+                                                                    <p></p>
                                                                 </div>
 
                                                             </div>
@@ -149,6 +173,7 @@ const Home = () => {
 
             {/* FIM DA DIV DELIVEY */}
 
+            {/* INICIO DA DIV SOBRE */}
 
 
         </div> {/* FIM DA DIV GERAL */}

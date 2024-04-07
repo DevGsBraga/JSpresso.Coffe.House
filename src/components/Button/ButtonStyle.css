@@ -3,6 +3,11 @@
     height: 2rem;
     margin: 1rem;
     display: flex;
+    transition: all .2s ease-in-out;
+}
+
+.container-btn:hover {
+    transform: scale(1.1);
 }
 
 
