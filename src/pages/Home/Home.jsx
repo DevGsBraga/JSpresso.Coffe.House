@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
+
 // IMAGENS
 import banner from "../../assets/svg/banner-coffe.svg";
 
@@ -33,20 +34,79 @@ const Home = () => {
 
     // AQUI FICA TODA O CÓDIGO DE ANIMAÇÃO
 
-    const container = useRef();
+        const container = useRef(null);
+        const favorites = useRef(null);
+        const logoImg = useRef(null);
 
     useGSAP(() => {
 
-      gsap.fromTo('.banners-titles', {
-          opacity: 0,
-          x: 200
-        }, {
-            duration:1,
-            opacity: 1,
-            x: 0
-        });
+        const animaTitle = container.current
+        const animaFavorites = favorites.current
+        const animaImg = logoImg.current
 
-    }, ); // <-- scope is for selector text (optional)
+
+
+        const animacao = (element, eixoX, eixoY, startScroll) => {
+            gsap.fromTo(element, {
+                opacity: 0,
+                x: eixoX,
+                y: eixoY,
+              }, {
+                  duration:2,
+                  opacity: 1,
+                  x: 0,
+                  y: 0,
+              }, {
+                  scrollTrigger: {
+                      trigger: startScroll,
+                      scrub: 2,
+                      start: "top 90%",
+                      end: "bottom 30%",
+
+                  }
+              });
+        }
+
+
+
+        // CHAMADA DA FUNÇÃO DE ANIMAÇÃO
+        animacao(animaTitle, 200, 0, ".container-cabecalho" );
+        animacao(animaFavorites, 0, 200, '.container-favorites')
+        animacao(animaImg, -200, 0, ".container-cabecalho" )
+
+      }, );
+
+
+
+    //   ANIMAÇÃO DA DIV DELIVERY
+
+    const containerDeliveryRef = useRef(null)
+
+    useGSAP(() => {
+
+        const Delivery = containerDeliveryRef.current
+
+
+        gsap.to(Delivery, {
+            opacity: 1,
+            y: 0,
+            duration: 3
+
+        }, {
+            scrollTrigger: {
+                trigger: '.contain-delivery',
+                start: 'top center',
+                end: 'bottom center',
+
+
+            }
+        })
+
+    })
+
+
+
+
 
 
 
@@ -92,8 +152,8 @@ const Home = () => {
                                     </div>
                             </div>
 
-                                <div className='banners-photos'>
-                                    <img className='img-banner-principal' src={banner} alt="" />
+                                <div className='banners-photos' >
+                                    <img className='img-banner-principal' src={banner} alt="" ref={logoImg} />
                                 </div>
 
                         </div>
@@ -102,7 +162,7 @@ const Home = () => {
 
             {/* DIV DE COMPONENTS PARA DESTACAR OS FAVORITOS */}
 
-                                            <div className='container-favorites'>
+                                            <div className='container-favorites' ref={favorites}>
                                                 <div className='favorites-titles'>
                                                     <h2>Os mais <span className='title-borde'>pedidos</span></h2>
                                                 </div>
@@ -139,7 +199,7 @@ const Home = () => {
 
 
             {/* INICIO DA DIV DELIVERY */}
-                                            <div className='contain-delivery'>
+                                            <div className='contain-delivery' ref={containerDeliveryRef} >
 
                                                     <div className='delivery-title'>
                                                         <h2>Como funciona nosso
