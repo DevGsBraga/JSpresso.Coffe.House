@@ -1,0 +1,148 @@
+
+
+/* CONTAINER GERAL */
+
+.container-sobre {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+
+
+
+
+    background-image: url(../../assets/imgs/Sobre/bg-sobre.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    margin-top: 10rem;
+
+}
+
+/* FIM */
+
+
+/* CONTAINER ESQUERDO */
+.sobre-left-contain {
+    width: 50%;
+}
+
+
+.left-contain-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-contain-img img {
+    transform: translateY(-100px);
+}
+
+
+
+/* FIM */
+
+
+/* CONTAINER DIREITO */
+
+.sobre-right-contain {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.right-contain-titles {
+    width: 70%;
+    text-align: left;
+
+}
+
+.right-contain-titles h3 {
+    font-size: 2em;
+    padding: 1rem 0;
+}
+
+.right-contain-titles p {
+    font-size: 1.4em;
+    padding: 1rem 0;
+}
+
+.right-contain-titles>span {
+    font-size: .9em;
+    padding: 1rem 0;
+    color: orange;
+}
+
+.title-border-span {
+    border-bottom: 2px solid orange;
+}
+
+
+/* FIM */
+
+
+
+
+
+
+
+
+/* MEDIA QUERYS */
+
+@media (max-width: 1366px) {
+
+}
+@media (max-width: 1024px) {
+
+
+
+
+
+
+
+    .left-contain-img img {
+       transform: translateY(-150px);
+    }
+
+}
+@media (max-width: 767px) {}
+@media (max-width: 418px) {
+
+    .container-sobre {
+        flex-direction: column;
+        background-image: url(../../assets/imgs/Sobre/bg-418px.svg);
+        height: 100vh;
+
+
+        margin-top: 15rem;
+    }
+
+    .sobre-right-contain {
+        width: 100%;
+    }
+
+    .right-contain-titles {
+        text-align: center;
+        padding: 0;
+    }
+
+    .sobre-left-contain {
+        width: 100%;
+    }
+
+
+
+
+
+
+
+
+    .left-contain-img img {
+        width: 50%;
+        transform: translateY(-70px);
+    }
+}

@@ -4,7 +4,7 @@ import './HomeStyle.css';    // CSS GERAL
 
 // ANIMAÇÃO
 
-import { useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
@@ -29,80 +29,60 @@ import coffe from '../../assets/imgs/Delivery/coffe-icon.svg';
 import car from '../../assets/imgs/Delivery/car-icon.svg';
 import coffeEnd from '../../assets/imgs/Delivery/coffeEnd.svg';
 
+// IMPORTAÇÕES DA IMAGEM DO SOBRE
+import logoSobre from '../../assets/imgs/Sobre/img-sobre.svg';
+
 
 const Home = () => {
 
     // AQUI FICA TODA O CÓDIGO DE ANIMAÇÃO
 
-        const container = useRef(null);
-        const favorites = useRef(null);
-        const logoImg = useRef(null);
 
-    useGSAP(() => {
+    useEffect(() => {
+            const tl = gsap.timeline({duration: .3});
 
-        const animaTitle = container.current
-        const animaFavorites = favorites.current
-        const animaImg = logoImg.current
-
-
-
-        const animacao = (element, eixoX, eixoY, startScroll) => {
-            gsap.fromTo(element, {
+        function animarPadrao(elemnt, eixoX, eixoY, endX, endY, inicio) {
+            tl.fromTo(elemnt, {
                 opacity: 0,
                 x: eixoX,
                 y: eixoY,
-              }, {
-                  duration:2,
-                  opacity: 1,
-                  x: 0,
-                  y: 0,
-              }, {
-                  scrollTrigger: {
-                      trigger: startScroll,
-                      scrub: 2,
-                      start: "top 90%",
-                      end: "bottom 30%",
-
-                  }
-              });
+            }, {
+                opacity: 1,
+                x: endX,
+                y: endY,
+                scrollTrigger: {
+                    trigger: inicio,
+                    start: 'top center',
+                    end: 'bottom center'
+                }
+            })
         }
 
+        animarPadrao('.btn-container-div', 0, 0, 0, 0);
+        animarPadrao('.title-principal', -200, 0, 0, 0);
+        animarPadrao('.banners-photos', 200, 0, 0, 0);
+        animarPadrao('.container-favorites', 0, 200, 0 , 0);
 
 
-        // CHAMADA DA FUNÇÃO DE ANIMAÇÃO
-        animacao(animaTitle, 200, 0, ".container-cabecalho" );
-        animacao(animaFavorites, 0, 200, '.container-favorites')
-        animacao(animaImg, -200, 0, ".container-cabecalho" )
 
-      }, );
+        // DELIVERY
+
+        animarPadrao('.delivery-elements', 0, 200, 0, 0, '.contain-delivery');
+
+
+
+
+
+
+
+    })
+
 
 
 
     //   ANIMAÇÃO DA DIV DELIVERY
 
-    const containerDeliveryRef = useRef(null)
 
-    useGSAP(() => {
-
-        const Delivery = containerDeliveryRef.current
-
-
-        gsap.to(Delivery, {
-            opacity: 1,
-            y: 0,
-            duration: 3
-
-        }, {
-            scrollTrigger: {
-                trigger: '.contain-delivery',
-                start: 'top center',
-                end: 'bottom center',
-
-
-            }
-        })
-
-    })
 
 
 
@@ -136,7 +116,7 @@ const Home = () => {
             {/* ------ BANNERS PRINCIPAIS ------ */}
 
                         <div className='container-banners'>
-                            <div className='banners-titles' ref={container}>
+                            <div className='banners-titles' >
 
                                 <div className='title-principal'>
                                     <h2>Recarregue suas <b>energias</b> com café, porque os bugs não vão consertar a si mesmos!</h2>
@@ -153,7 +133,7 @@ const Home = () => {
                             </div>
 
                                 <div className='banners-photos' >
-                                    <img className='img-banner-principal' src={banner} alt="" ref={logoImg} />
+                                    <img className='img-banner-principal' src={banner} alt=""  />
                                 </div>
 
                         </div>
@@ -162,7 +142,7 @@ const Home = () => {
 
             {/* DIV DE COMPONENTS PARA DESTACAR OS FAVORITOS */}
 
-                                            <div className='container-favorites' ref={favorites}>
+                                            <div className='container-favorites' >
                                                 <div className='favorites-titles'>
                                                     <h2>Os mais <span className='title-borde'>pedidos</span></h2>
                                                 </div>
@@ -199,7 +179,7 @@ const Home = () => {
 
 
             {/* INICIO DA DIV DELIVERY */}
-                                            <div className='contain-delivery' ref={containerDeliveryRef} >
+                                            <div className='contain-delivery'  >
 
                                                     <div className='delivery-title'>
                                                         <h2>Como funciona nosso
@@ -235,8 +215,40 @@ const Home = () => {
 
             {/* INICIO DA DIV SOBRE */}
 
+                <div className='container-sobre'>
 
-        </div> {/* FIM DA DIV GERAL */}
+                    <div className='sobre-left-contain'>
+
+                        <div className='left-contain-img'>
+                            <img src={logoSobre} alt="" />
+                        </div>
+
+                    </div>
+
+                    <div className='sobre-right-contain'>
+                        <div className='right-contain-titles'>
+
+                            <h3>
+                                Sobre <span className='title-border-span'>nós</span>
+                            </h3>
+
+                            <p>
+                                Fornecemos café de qualidade e pronto para entregar.
+                            </p>
+
+                            <span>
+                                Bem-vindo à nossa cafeteria DEV! Aqui, o café é tão essencial quanto o código. Nosso segredo? Uma receita especial que mantém os devs funcionando em todo o mundo. Entre, relaxe e recarregue - com café forte e piadas nerds. Aqui, cada gole é um byte de inspiração!
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            {/* FIM DA DIV SOBRE */}
+
+
+
+        </div>
+            {/* FIM DA DIV GERAL */}
     </>
   )
 }
