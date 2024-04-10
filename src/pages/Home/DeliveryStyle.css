@@ -58,7 +58,7 @@
 /* MEDIA QUERYS */
 
 @media (max-width: 1366px) {}
-@media (max-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1366px) {
     .delivery-elements {
         flex-direction: column;
         text-align: center;
@@ -66,8 +66,7 @@
     }
 
     .contain-delivery {
-        margin-top: 65rem;
-        background-size: cover;
+        margin-top: 75rem;
     }
 
     .delivery-title {
@@ -78,8 +77,21 @@
         align-items: center;
         justify-content: center;
     }
+
+    .elements-gp img {
+        width: 15rem;
+    }
+
+    .elements-gp>h3 {
+        font-size: 1.8em;
+    }
+    .elements-gp>p {
+        font-size: 1.4em;
+    }
+
+
 }
-@media (max-width: 767px) {
+@media (min-width: 767px) and (max-width: 1024px) {
     .delivery-elements {
         flex-direction: column;
         text-align: center;
@@ -87,8 +99,8 @@
     }
 
     .contain-delivery {
-        margin-top: 85rem;
-        flex-direction: row;
+        margin-top: 80rem;
+        
         background-size: cover;
     }
 

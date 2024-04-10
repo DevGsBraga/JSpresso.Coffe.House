@@ -48,7 +48,9 @@
 /* MEDIA QUERYS */
 
 
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+    
+}
 @media (max-width: 767px) {}
 @media (max-width: 418px) {}
 @media (max-width: 320px) {}

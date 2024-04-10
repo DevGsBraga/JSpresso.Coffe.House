@@ -3,12 +3,10 @@ import './HomeStyle.css';    // CSS GERAL
 
 
 // ANIMAÇÃO
-
 import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
-
 
 // IMAGENS
 import banner from "../../assets/svg/banner-coffe.svg";
@@ -31,6 +29,16 @@ import coffeEnd from '../../assets/imgs/Delivery/coffeEnd.svg';
 
 // IMPORTAÇÕES DA IMAGEM DO SOBRE
 import logoSobre from '../../assets/imgs/Sobre/img-sobre.svg';
+
+// IMPORTAÇÃO DOS MELHORES PRODUTOS
+import produto1 from '../../assets/imgs/Produtos/produto1.svg';
+import produto2 from '../../assets/imgs/Produtos/produto2.svg';
+import produto3 from '../../assets/imgs/Produtos/produto3.svg';
+import produto4 from '../../assets/imgs/Produtos/produto4.svg';
+import produto5 from '../../assets/imgs/Produtos/produto5.svg';
+import produto6 from '../../assets/imgs/Produtos/produto6.svg';
+
+
 
 
 const Home = () => {
@@ -65,7 +73,7 @@ const Home = () => {
 
 
 
-        // DELIVERY
+
 
         animarPadrao('.delivery-elements', 0, 200, 0, 0, '.contain-delivery');
 
@@ -80,7 +88,6 @@ const Home = () => {
 
 
 
-    //   ANIMAÇÃO DA DIV DELIVERY
 
 
 
@@ -244,6 +251,52 @@ const Home = () => {
                     </div>
                 </div>
             {/* FIM DA DIV SOBRE */}
+
+            {/* INICIO DIV MELHORES PRODUTOS */}
+
+                        <div className='container-melhores-products'>
+
+                            <div className='products-title'>
+                                <h3>
+                                    Menu selecionado especialmente para <span>você</span>
+                                </h3>
+
+                            </div>
+
+                                <div className='products-elements'>
+
+                                    <div>
+                                        <FavComponent nome={'Reactpresso'} preco={'R$ 7,47'} foto={produto1} />
+                                    </div>
+
+                                    <div>
+                                        <FavComponent nome={'Full Stack Fuel'} preco={'R$ 9,49'} foto={produto2} />
+                                    </div>
+
+                                    <div>
+                                        <FavComponent nome={'NodeBrew'} preco={'R$ 5,47'} foto={produto3} />
+                                    </div>
+
+                                    <div>
+                                        <FavComponent nome={'RubyRoast'} preco={'R$ 8,47'} foto={produto4} />
+                                    </div>
+
+                                    <div>
+                                        <FavComponent nome={'JavaScriptJolt'} preco={'R$ 6,47'} foto={produto5} />
+                                    </div>
+
+                                    <div>
+                                        <FavComponent nome={'HTMLattee'} preco={'R$ 11,47'} foto={produto6} />
+                                    </div>
+
+
+                                </div>
+
+                        </div>
+
+
+
+            {/* FIM DA DIV MELHORES PRODUTOS */}
 
 
 

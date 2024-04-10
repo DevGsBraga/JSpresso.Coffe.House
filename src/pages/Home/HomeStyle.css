@@ -3,6 +3,7 @@
 @import url(./DeliveryStyle.css);
 @import url(./InputHeader.css);
 @import url(./SobreStyle.css);
+@import url(./ProdutosStyle.css);
 
 
 
@@ -98,7 +99,7 @@
 }
 
 .favorites-titles {
-    width: 100%;
+    width: 100vw;
     height: 20vh;
     z-index: 996;
     margin: 2rem;
@@ -126,7 +127,9 @@
 
 /* MEDIA QUERYS */
 
+
 @media (max-width: 1024px) {
+
     .container-cabecalho {
         height: 63rem;
     }
@@ -146,23 +149,23 @@
     }
 
     .favorites-components {
+        width: 100%;
         z-index: 996;
+    }
+
+    .favorites-bg {
+        width: 50%;
     }
 
 
     .container-favorites {
         transform: none;
+        margin: 0;
 
     }
     .container-favorites::after {
-        transform: none;
-        width: 100%;
         display: none;
 
-    }
-
-    .favorites-bg {
-       background: none;
     }
 
     .layout-container-favorites {
@@ -172,7 +175,15 @@
 
 
 
+
+
 }
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .title-principal h2 {
+        font-size: 1.6em;
+        padding: 1rem 0;
+    }
+
+}
 @media (max-width: 418px) {}
 @media (max-width: 320px) {}

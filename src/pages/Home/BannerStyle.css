@@ -57,9 +57,32 @@
 
 
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1366px) {
     .container-banners {
-        margin: 3rem 0;
+        margin: 4rem 0;
+        height: 50%;
+        display: flex;
+    }
+
+    .banners-titles {
+        width: 100%;
+    }
+
+    .banners-photos {
+        width: 80%;
+        margin: 4rem 0;
+    }
+
+    .img-banner-principal {
+        width: 35rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .container-banners {
+        margin: 4rem 0;
+        height: 50%;
+        display: flex;
     }
 
     .banners-titles {
@@ -68,14 +91,12 @@
 
     .banners-photos {
         width: 100%;
-        margin: 1rem 0;
+        margin: 4rem 0;
     }
 
     .img-banner-principal {
         width: 25rem;
     }
 }
-
-@media (max-width: 767px) {}
 @media (max-width: 418px) {}
 @media (max-width: 320px) {}

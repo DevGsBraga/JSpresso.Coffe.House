@@ -1,0 +1,83 @@
+
+/*  ESTILIZAÇÃO DOS PRODUTOS */
+
+
+.container-melhores-products {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem 0;
+}
+
+
+/* TITULO DO COMPONENTE */
+
+.products-title {
+    width: 90%;
+    padding: 2rem 0;
+}
+.products-title>h3 {
+    font-size: 1.3em;
+}
+
+.products-title > h3 > span {
+    border-bottom: 3px solid orange;
+}
+
+
+/* ELEMENTOS */
+
+.products-elements {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    justify-content: center;
+}
+
+
+
+/* MEDIA QUERYS */
+
+@media (max-width: 1366px) {}
+
+@media (max-width: 1024px) {
+    .container-melhores-products {
+        margin: 5rem 0;
+    }
+
+    .products-elements {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .products-title {
+        width: 100%;
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 728px) {
+    .container-melhores-products {
+        margin: 5rem 0;
+    }
+
+    .products-elements {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .products-title {
+        width: 100%;
+        padding: 2rem 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1366px) {}
