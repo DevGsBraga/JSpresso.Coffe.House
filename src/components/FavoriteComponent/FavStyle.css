@@ -49,68 +49,66 @@
 @media (max-width: 1366px) {
     .fav-contain {
         width: 100%;
-    }
-    .img-component {
-        width: 15rem;
-        height: 35%;
+        padding:0;
     }
 
-}
 
-
-
-@media (min-width: 1024px) and (max-width: 1366px) {
-    .fav-contain {
+    /* .contain-description {
         width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem 0;
-        background-color: rgba(255, 255, 255, 0.788);
-
-        border: 4px solid rgba(194, 183, 88, 0.247);
-        border-radius: 12px;
-    }
-
-
-    .contain-description {
-        width: 40%;
 
     }
     .contain-img {
-        width: 50%;
+        width: 100%;
 
     }
     .img-component {
         width: 25rem;
         height: 35%;
-
-    }
-
+    } */
 
 }
-@media (min-width: 767px) and (max-width: 1024px) {
+
+
+
+@media (max-width: 1024px) {
     .fav-contain {
         width: 100%;
-        display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
         padding: 1rem 0;
-        background-color: rgba(255, 255, 255, 0.788);
 
-        border: 4px solid rgba(194, 183, 88, 0.247);
-        border-radius: 12px;
     }
 
 
     .contain-description {
-        width: 40%;
+        width: 100%;
 
     }
     .contain-img {
-        width: 50%;
+        width: 100%;
+
+    }
+    .img-component {
+        width: 25rem;
+        height: 35%;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .fav-contain {
+        width: 100%;
+        flex-direction: row;
+        padding: 1rem 0;
+
+    }
+
+
+    .contain-description {
+        width: 100%;
+
+    }
+    .contain-img {
+        width: 100%;
 
     }
     .img-component {
@@ -120,6 +118,49 @@
     }
 }
 @media (max-width: 418px) {
+    .fav-contain {
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem 0;
+
+    }
+
+
+    /* .contain-description {
+        width: 100%;
+
+    }
+    .contain-img {
+        width: 100%;
+
+    } */
+    .img-component {
+        width: 22rem;
+        height: 35%;
+
+    }
 
 }
-@media (max-width: 320px) {}
+@media (max-width: 323px) {
+    .fav-contain {
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem 0;
+
+    }
+
+
+    /* .contain-description {
+        width: 100%;
+
+    }
+    .contain-img {
+        width: 100%;
+
+    } */
+    .img-component {
+        width: 19.5rem;
+        height: 35%;
+
+    }
+}

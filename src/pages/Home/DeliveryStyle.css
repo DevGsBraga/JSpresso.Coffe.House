@@ -27,10 +27,9 @@
 /* ESTILIZAÇÃO DOS COMPONENTS */
 
 .delivery-elements {
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
-
 }
 
 
@@ -57,9 +56,9 @@
 
 /* MEDIA QUERYS */
 
-@media (max-width: 1366px) {}
-@media (min-width: 1024px) and (max-width: 1366px) {
-    .delivery-elements {
+
+@media (max-width: 1366px) {
+    /* .delivery-elements {
         flex-direction: column;
         text-align: center;
 
@@ -76,7 +75,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
+    } */
 
     .elements-gp img {
         width: 15rem;
@@ -91,48 +90,69 @@
 
 
 }
-@media (min-width: 767px) and (max-width: 1024px) {
-    .delivery-elements {
-        flex-direction: column;
-        text-align: center;
-        transform: translateY(-2rem);
+@media (max-width: 1024px) {
+    .elements-gp img {
+        width: 10rem;
+    }
+
+    .elements-gp>h3 {
+        font-size: 1.6em;
+    }
+    .elements-gp>p {
+        font-size: 1.2em;
     }
 
     .contain-delivery {
-        margin-top: 80rem;
-        
-        background-size: cover;
+        margin-top: 45rem;
     }
-
     .delivery-title {
         font-size: large;
-        padding: 0rem;
         text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }
 @media (max-width: 418px) {
+
+
+
     .delivery-elements {
-        flex-direction: column;
-        text-align: center;
-        transform: translateY(-2rem);
+        display: contents;
+        flex-direction: block;
+        justify-content: center;
+    }
+
+
+    .elements-gp img {
+        width: 10rem;
+    }
+
+    .elements-gp>h3 {
+        font-size: 1.6em;
+    }
+    .elements-gp>p {
+        font-size: 1.2em;
     }
 
     .contain-delivery {
-        margin-top: 85rem;
-        flex-direction: row;
-        background-size: cover;
+        margin-top: 60rem;
+        display: block;
     }
-
     .delivery-title {
+        width: 100%;
         font-size: large;
-        padding: 0rem;
         text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 0;
     }
 }
-@media (max-width: 320px) {}
+@media (max-width: 363px) {
+    .elements-gp img {
+        width: 8rem;
+    }
+
+    .elements-gp>h3 {
+        font-size: 1.4em;
+    }
+    .elements-gp>p {
+        font-size: 1em;
+    }
+
+}

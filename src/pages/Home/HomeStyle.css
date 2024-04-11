@@ -127,16 +127,109 @@
 
 /* MEDIA QUERYS */
 
-
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
 
     .container-cabecalho {
         height: 63rem;
     }
 
     .cabecalho-nav-bar {
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         justify-content: center;
+
+    }
+
+    .nav-bar-content {
+        gap: .5rem;
+    }
+
+    .btn-container-div {
+        width: 100%;
+
+    }
+
+    .favorites-components {
+        width: 100%;
+        z-index: 996;
+    }
+
+    .favorites-bg {
+        width: 100%;
+    }
+
+
+    .container-favorites {
+        /* transform: none; */
+        margin: 0;
+        margin-top: 20rem;
+
+    }
+    /* .container-favorites::after {
+        display: none;
+
+    } */
+
+
+
+}
+
+
+@media (max-width: 1024px) {
+
+    .cabecalho-nav-bar {
+        /* flex-wrap: wrap; */
+        justify-content: center;
+
+    }
+
+    .nav-bar-content {
+        gap: .5rem;
+    }
+
+    .btn-container-div {
+        width: 100%;
+
+    }
+
+    .favorites-components {
+        width: 100%;
+        z-index: 996;
+    }
+
+    .favorites-bg {
+        width: 100%;
+    }
+
+
+    .container-favorites {
+        /* transform: none; */
+        margin: 0;
+        margin-top: 35rem;
+
+    }
+    /* .container-favorites::after {
+        display: none;
+
+    } */
+
+    .layout-container-favorites {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .title-principal h2 {
+        font-size: 1.6em;
+        padding: 1rem 0;
+    }
+
+}
+@media (max-width: 418px) {
+    .cabecalho-nav-bar {
+        flex-wrap: wrap;
+
+
     }
 
     .nav-bar-content {
@@ -154,36 +247,28 @@
     }
 
     .favorites-bg {
-        width: 50%;
+        width: 100%;
     }
 
 
     .container-favorites {
-        transform: none;
+        /* transform: none; */
         margin: 0;
+        margin-top: 66rem;
 
     }
-    .container-favorites::after {
+    /* .container-favorites::after {
         display: none;
 
-    }
-
-    .layout-container-favorites {
-        flex-direction: column;
-        margin-top: 93rem;
-    }
-
-
-
+    } */
 
 
 }
-@media (max-width: 767px) {
-    .title-principal h2 {
-        font-size: 1.6em;
-        padding: 1rem 0;
-    }
+@media (max-width: 320px) {
+    .container-favorites {
+        /* transform: none; */
+        margin: 0;
+        margin-top: 68rem;
 
+    }
 }
-@media (max-width: 418px) {}
-@media (max-width: 320px) {}

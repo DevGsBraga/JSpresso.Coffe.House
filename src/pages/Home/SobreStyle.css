@@ -146,3 +146,13 @@
         transform: translateY(-70px);
     }
 }
+
+
+@media (max-width: 323px) {
+    .container-sobre{
+        flex-direction: column;
+        background-image: url(/src/assets/imgs/Sobre/bg-418px.svg);
+        height: 47rem;
+        margin-top: 20rem;
+    }
+}
