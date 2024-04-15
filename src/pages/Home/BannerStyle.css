@@ -78,6 +78,9 @@
 }
 
 @media (max-width: 1024px) {
+    .container-banners {
+        flex-wrap: wrap;
+    }
     .banners-titles {
         width: 100%;
     }
@@ -94,6 +97,10 @@
 
 
 @media (max-width: 767px) {
+    .container-banners {
+        flex-wrap: wrap;
+    }
+
     .container-banners {
         margin: 4rem 0;
         height: 50%;
@@ -115,6 +122,10 @@
 }
 @media (max-width: 418px) {}
 @media (max-width: 360px) {
+    .container-banners {
+        flex-wrap: wrap;
+    }
+    
     .img-banner-principal {
         width: 20rem;
     }
