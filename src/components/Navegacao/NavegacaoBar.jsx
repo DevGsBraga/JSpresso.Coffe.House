@@ -1,3 +1,6 @@
+import './NaveBar.css';
+
+
 import { Link } from 'react-router-dom';
 import logo from "../../assets/svg/logo-coffe.svg";
 import { RiSearchLine } from 'react-icons/ri';

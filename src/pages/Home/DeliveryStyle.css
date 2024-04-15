@@ -58,34 +58,20 @@
 
 
 @media (max-width: 1366px) {
-    /* .delivery-elements {
-        flex-direction: column;
-        text-align: center;
-
-    }
 
     .contain-delivery {
-        margin-top: 75rem;
+        height: 80vh;
     }
 
-    .delivery-title {
-        font-size: x-large;
-        padding: 0rem;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    } */
-
     .elements-gp img {
-        width: 15rem;
+        width: 7rem;
     }
 
     .elements-gp>h3 {
-        font-size: 1.8em;
+        font-size: 1.4em;
     }
     .elements-gp>p {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
 
@@ -111,8 +97,6 @@
     }
 }
 @media (max-width: 418px) {
-
-
 
     .delivery-elements {
         display: contents;

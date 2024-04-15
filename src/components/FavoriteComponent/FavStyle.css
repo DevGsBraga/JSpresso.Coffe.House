@@ -72,10 +72,9 @@
 
 @media (max-width: 1024px) {
     .fav-contain {
-        width: 100%;
+        width: 100vw;
         flex-direction: row;
         padding: 1rem 0;
-
     }
 
 
@@ -122,7 +121,6 @@
         width: 100%;
         flex-direction: column;
         padding: 1rem 0;
-
     }
 
 
@@ -135,7 +133,7 @@
 
     } */
     .img-component {
-        width: 22rem;
+        width: 24rem;
         height: 35%;
 
     }

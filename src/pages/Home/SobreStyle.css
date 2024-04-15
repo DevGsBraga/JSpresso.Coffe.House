@@ -118,7 +118,7 @@
         height: 100vh;
 
 
-        margin-top: 15rem;
+        margin-top: 30rem;
     }
 
     .sobre-right-contain {
@@ -153,6 +153,7 @@
         flex-direction: column;
         background-image: url(/src/assets/imgs/Sobre/bg-418px.svg);
         height: 47rem;
-        margin-top: 20rem;
+        margin-top: 30rem;
     }
+    
 }

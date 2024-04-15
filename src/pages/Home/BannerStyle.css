@@ -57,12 +57,8 @@
 
 
 
-@media (min-width: 1024px) and (max-width: 1366px) {
-    .container-banners {
-        margin: 4rem 0;
-        height: 50%;
-        display: flex;
-    }
+@media (max-width: 1366px) {
+
 
     .banners-titles {
         width: 100%;
@@ -77,6 +73,22 @@
         width: 35rem;
     }
 }
+
+@media (max-width: 1024px) {
+    .banners-titles {
+        width: 100%;
+    }
+
+    .banners-photos {
+        width: 80%;
+        margin: 4rem 0;
+    }
+
+    .img-banner-principal {
+        width: 35rem;
+    }
+}
+
 
 @media (max-width: 767px) {
     .container-banners {
@@ -99,4 +111,12 @@
     }
 }
 @media (max-width: 418px) {}
-@media (max-width: 320px) {}
+@media (max-width: 360px) {
+    .img-banner-principal {
+        width: 20rem;
+    }
+    .banners-photos {
+        width: 100%;
+        margin: 4rem -1rem;
+    }
+}

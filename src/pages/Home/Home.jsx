@@ -78,11 +78,6 @@ const Home = () => {
         animarPadrao('.delivery-elements', 0, 200, 0, 0, '.contain-delivery');
 
 
-
-
-
-
-
     })
 
 
@@ -115,8 +110,8 @@ const Home = () => {
 
   return (
     <>
-        <div className="container-cabecalho">
             <NavegacaoBar />
+        <div className="container-cabecalho">
 
             {/* FIM DO CABEÇALHO DE NAVEGAÇÃO  */}
 

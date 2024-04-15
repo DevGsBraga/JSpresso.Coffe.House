@@ -1,0 +1,158 @@
+.container-cabecalho {
+    width: 100vw;
+    height: 65rem;
+    background: var(--primary-color);
+}
+
+
+
+
+.cabecalho-nav-bar {
+    width: 100%;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    background: var(--primary-color);
+
+}
+.nav-bar-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-bar-logo {
+    width: 12rem;
+    height: 80px;
+}
+
+/* ESTILIZAÇÃO DAS CORES DA BARRA DE NAVEGAÇÃO */
+.content-sobre {
+    color: var(--secundary-color);
+}
+
+/* ESTILIZAÇÃO DA LISTA DE NAVEGAÇÃO */
+.gp-list-nav-bar{
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 1rem;
+}
+
+
+
+
+
+
+
+
+/* MEDIA QUERYS */
+
+@media (max-width: 1366px) {
+
+    .container-cabecalho {
+        height: 63rem;
+    }
+
+    .cabecalho-nav-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .nav-bar-content {
+        gap: .5rem;
+    }
+
+    .btn-container-div {
+        width: 100%;
+
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .cabecalho-nav-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .nav-bar-content {
+        gap: .5rem;
+    }
+
+    .btn-container-div {
+        width: 100%;
+
+    }
+
+}
+
+@media (max-width: 418px) {
+
+    .cabecalho-nav-bar {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-bar-content {
+        width: 100%;
+        gap: .5rem;
+    }
+
+    .btn-container-div {
+        width: 100%;
+
+    }
+
+
+    /* .container-favorites {
+        margin: 0;
+        margin-top: 80rem;
+    } */
+
+
+
+}
+
+
+@media (max-width: 360px) {
+
+    .cabecalho-nav-bar {
+
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-bar-content {
+        width: 100%;
+        gap: .5rem;
+    }
+
+    .nav-bar-content img {
+        width: 50%;
+        gap: .5rem;
+    }
+
+    .btn-container-div {
+        width: 100%;
+
+    }
+    .gp-list-nav-bar {
+        font-size: .7em;
+    }
+
+    
+
+
+    /* .container-favorites {
+        margin: 0;
+        margin-top: 80rem;
+    } */
+
+
+
+}
