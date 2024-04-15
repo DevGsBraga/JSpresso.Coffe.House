@@ -55,7 +55,7 @@
     }
 
     .cabecalho-nav-bar {
-        flex-wrap: wrap;
+        
         justify-content: center;
 
     }
@@ -145,7 +145,7 @@
         font-size: .7em;
     }
 
-    
+
 
 
     /* .container-favorites {

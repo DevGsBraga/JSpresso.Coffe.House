@@ -58,6 +58,9 @@
 
 
 @media (max-width: 1366px) {
+    .container-banners {
+        flex-wrap: nowrap;
+    }
 
 
     .banners-titles {
