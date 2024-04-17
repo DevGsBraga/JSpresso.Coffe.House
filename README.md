@@ -3,7 +3,7 @@
 
 ### Olá, devs! Aqui na JSpresso, estamos animados para compartilhar nosso projeto de e-commerce focado em café, feito por devs para devs.
 
-<img src="./src/assets/imgs/layout-coffe.png" alt="Exemplo imagem">
+<img src="./src/assets/imgs/screen.png" alt="Exemplo imagem">
 
 
 ## Sobre o Projeto
