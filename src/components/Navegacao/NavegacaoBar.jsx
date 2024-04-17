@@ -8,15 +8,20 @@ import { LiaShoppingCartSolid } from "react-icons/lia";
 
 
 const NavegacaoBar = () => {
+
+
+
+
+
   return (
     <nav className="cabecalho-nav-bar">
 
                 <div className='nav-bar-content'>
                     <img src={logo} alt="" />
                         <ul className='content-list'>
-                            <Link className='gp-list-nav-bar' to={'/sobre'}><span className='content-sobre'>Sobre Nós</span></Link>
-                            <Link className='gp-list-nav-bar' to={'/'}>Nossos Produtos</Link>
-                            <Link className='gp-list-nav-bar' to={'/'}>Delivery</Link>
+                            <Link className='gp-list-nav-bar' id='border1' to={'/sobre'}><span className='content-sobre'>Sobre Nós</span></Link>
+                            <Link className='gp-list-nav-bar' id='border2' to={'/'}>Nossos Produtos</Link>
+                            <Link className='gp-list-nav-bar' id='border3' to={'/'}>Delivery</Link>
                         </ul>
                 </div>
 

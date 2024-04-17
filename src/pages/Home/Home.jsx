@@ -3,10 +3,12 @@ import './HomeStyle.css';    // CSS GERAL
 
 
 // ANIMAÇÃO
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(useGSAP);
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+
 
 // IMAGENS
 import banner from "../../assets/svg/banner-coffe.svg";
@@ -37,6 +39,7 @@ import produto3 from '../../assets/imgs/Produtos/produto3.svg';
 import produto4 from '../../assets/imgs/Produtos/produto4.svg';
 import produto5 from '../../assets/imgs/Produtos/produto5.svg';
 import produto6 from '../../assets/imgs/Produtos/produto6.svg';
+import Footer from '../../components/Footer/Footer';
 
 
 
@@ -44,54 +47,56 @@ import produto6 from '../../assets/imgs/Produtos/produto6.svg';
 const Home = () => {
 
     // AQUI FICA TODA O CÓDIGO DE ANIMAÇÃO
+    const favoritesRef = useRef(null);
+    const deliveryRef = useRef(null);
+    const sobreRef = useRef(null);
+    const produtosRef = useRef(null);
+
+
+
+
+
 
 
     useEffect(() => {
-            const tl = gsap.timeline({duration: .3});
 
-        function animarPadrao(elemnt, eixoX, eixoY, endX, endY, inicio) {
-            tl.fromTo(elemnt, {
+        const favorites = favoritesRef.current; // ANIMA O CONTAINER DE FAVORITOS
+        const delivery = deliveryRef.current; // ANIMA O CONTAINER DE DELIVERY
+        const sobre = sobreRef.current; // ANIMA O CONTAINER DE SOBRE
+        const produtos = produtosRef.current; // ANIMA O CONTAINER DE PRODUTOS
+
+
+
+        function animarContainers(element, startX, startY, endX, endY, inicio, time) {
+            gsap.fromTo(element, {
                 opacity: 0,
-                x: eixoX,
-                y: eixoY,
+                x: startX,
+                y: startY,
+
+
+
             }, {
                 opacity: 1,
-                x: endX,
-                y: endY,
+                x:endX ,
+                y:endY ,
+                duration: time,
                 scrollTrigger: {
                     trigger: inicio,
-                    start: 'top center',
-                    end: 'bottom center'
+                    start: "top top",
+                    bottom: "bottom center",
+
                 }
             })
         }
 
-        animarPadrao('.btn-container-div', 0, 0, 0, 0);
-        animarPadrao('.title-principal', -200, 0, 0, 0);
-        animarPadrao('.banners-photos', 200, 0, 0, 0);
-        animarPadrao('.container-favorites', 0, 200, 0 , 0);
 
-
-
-
-
-        animarPadrao('.delivery-elements', 0, 200, 0, 0, '.contain-delivery');
-
+        //  CHAMADA DAS ANIMAÇÕES
+        animarContainers(favorites, 0, 200, 0, 0, '.banners-photos', .6);
+        animarContainers(delivery, 0, 200, 0, 0, '.favorites-bg', .6);
+        animarContainers(sobre, 0, 200,0 ,0, '.delivery-elements', .6);
+        animarContainers(produtos, 0, 200,0 ,0, '.sobre-right-contain', .6);
 
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -144,13 +149,13 @@ const Home = () => {
 
             {/* DIV DE COMPONENTS PARA DESTACAR OS FAVORITOS */}
 
-                                            <div className='container-favorites' >
+                                            <div className='container-favorites'  >
                                                 <div className='favorites-titles'>
                                                     <h2>Os mais <span className='title-borde'>pedidos</span></h2>
                                                 </div>
 
 
-                                                    <div className='layout-container-favorites'>
+                                                    <div className='layout-container-favorites' ref={favoritesRef}>
 
                                                        <div className='favorites-components'>
 
@@ -181,7 +186,7 @@ const Home = () => {
 
 
             {/* INICIO DA DIV DELIVERY */}
-                                            <div className='contain-delivery'  >
+                                            <div className='contain-delivery' ref={deliveryRef}  >
 
                                                     <div className='delivery-title'>
                                                         <h2>Como funciona nosso
@@ -217,7 +222,7 @@ const Home = () => {
 
             {/* INICIO DA DIV SOBRE */}
 
-                <div className='container-sobre'>
+                <div className='container-sobre' ref={sobreRef}>
 
                     <div className='sobre-left-contain'>
 
@@ -249,7 +254,7 @@ const Home = () => {
 
             {/* INICIO DIV MELHORES PRODUTOS */}
 
-                        <div className='container-melhores-products'>
+                        <div className='container-melhores-products' ref={produtosRef} >
 
                             <div className='products-title'>
                                 <h3>
@@ -295,8 +300,10 @@ const Home = () => {
 
 
 
+                            <Footer />
         </div>
             {/* FIM DA DIV GERAL */}
+
     </>
   )
 }

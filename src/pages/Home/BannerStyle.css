@@ -80,6 +80,7 @@
 @media (max-width: 1024px) {
     .container-banners {
         flex-wrap: wrap;
+        padding: 3rem 0;
     }
     .banners-titles {
         width: 100%;
@@ -125,7 +126,7 @@
     .container-banners {
         flex-wrap: wrap;
     }
-    
+
     .img-banner-principal {
         width: 20rem;
     }
