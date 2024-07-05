@@ -1,8 +1,10 @@
 import './LoginStyle.css';
 
+import { Link } from 'react-router-dom';
+
 
 // IMAGENS
-import xicara from '../../assets/imgs/Login/xicara-cafe.png'
+import coffe from '../../assets/imgs/Login/frase-coffe.png'
 import logo from '../../assets/svg/logo-coffe.svg'
 
 const Login = () => {
@@ -21,20 +23,33 @@ const Login = () => {
                                 <img src={logo} alt="" />
 
                             </div>
-                            
+
                                 <h2>Login</h2>
                         </div>
 
                             <div className='form-conteudo'>
 
                                 <form action="">
-                                        <input type="text" />
+                                        <label className='conteudo-info-login' htmlFor="text">E-mail:</label>
+                                        <input type="email" />
+
+                                        <label className='conteudo-info-login' htmlFor="text">Senha:</label>
                                         <input type="text" />
                                 </form>
 
-
-
                             </div>
+
+
+                                        <div className='form-btn-contain'>
+
+                                            <button className='btn-form'>Entrar</button>
+
+
+                                            <div className='contain-criar-conta'>
+                                                <p>Ainda não tem uma conta? <Link style={{color: '#f9d9aaee'}}>Criar agora</Link></p>
+                                            </div>
+
+                                        </div>
                     </div>
 
                 </div>
@@ -47,7 +62,7 @@ const Login = () => {
             <div className='container-login-right'>
                     <div className='login-right-img'>
 
-                        <img className='img-login' src={xicara} alt="" />
+                        <img className='img-login' src={coffe} alt="" />
 
                     </div>
             </div>
