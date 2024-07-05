@@ -32,9 +32,14 @@ const NavegacaoBar = () => {
                                     <RiSearchLine className="search-icon" />
                                         <input type="text" placeholder="Capuccino" />
                                 </div>
-                                <div>
-                                    <LiaShoppingCartSolid size={'32px'}  />
-                                </div>
+
+                                    <div>
+                                        <LiaShoppingCartSolid size={'32px'}  />
+                                    </div>
+
+                                        <div className='container-login'>
+                                            <Link to={"/login"} className='login-link'>Faça seu login</Link>
+                                        </div>
                             </div>
         </nav>
   )
