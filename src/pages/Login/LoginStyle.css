@@ -2,28 +2,26 @@
 /* CONTAINER PRINCIPAL */
 #container__login {
     width: 100vw;
-    max-width: 1920px;
     height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: center;
 
 
 
-    background-image: url(../../assets/imgs/Login/bg-login-fundo.png);
+    background-image:url(../../assets/imgs/Login/bg-login-fundo.png);
     background-size: cover;
 
     /* background:linear-gradient(290deg, #ff902b 12%, #f9d9aaee 57%, #2f2105 100%); */
-
-
 
 }
 
 
 /* CONTAINER SECUNDÁRIO  */
 .login__box {
-    width: 80%;
+    width: 90%;
+    max-width: 1980px;
     height: 90%;
     display: flex;
 
@@ -135,12 +133,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .img-login {
     max-width: 90%;
-    border-radius: 50%;
 }
 
 
@@ -148,9 +144,11 @@
 /* RESPONSIVIDADE */
 
 
-@media (max-width: 1560px) {
+@media (max-width: 1444px) {
     .login__box {
         width: 90%;
+        justify-content: center;
+        align-items: center;
     }
 
     .box__form {
@@ -168,11 +166,32 @@
 
     .login__box {
         width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
     }
 
+    .box__left--login{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container-login-right {
+        width: 100%;
+    }
+
+    .login-right-img {
+        width: 100%;
+        height: 70%;
+    }
+
+
+
     .box__form {
-        width: 600px;
-        margin-top: 13rem;
+        width: 100%;
+        height: 500px;
+        margin-top: 7rem;
     }
 }
 
