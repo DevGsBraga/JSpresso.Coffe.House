@@ -2,12 +2,58 @@ import './LoginStyle.css';
 
 import { Link } from 'react-router-dom';
 
+import { useState } from 'react';
+import axios from 'axios';
+
+
 
 // IMAGENS
 import coffe from '../../assets/imgs/Login/frase-coffe.png'
 import logo from '../../assets/svg/logo-coffe.svg'
 
 const Login = () => {
+
+    // LÓGICA DE LOGIN
+    const [email, setEmail] = useState('')  // TRATA O EMAIL DO USUÁRIO
+    const [password, setPassword] = useState('') // TRATA A SENHA DO USUÁRIO
+
+
+    // FUNÇÃO PARA VALIDAR O LOGIN
+    const autenticaLogin = async (conteudo) => {
+
+        conteudo.preventDefault()
+
+
+        // TRY CATCH PARA TRATAR SUCESSO E ERROS
+        try {
+            const resposta = await axios.get('http://localhost:3000/auth/login', {email, password})
+            console.log(resposta.data)
+
+        } catch (error) {
+            console.error(error)
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div id="container__login">
 
@@ -29,12 +75,17 @@ const Login = () => {
 
                             <div className='form-conteudo'>
 
-                                <form action="">
+                                <form onSubmit={autenticaLogin}>
                                         <label className='conteudo-info-login' htmlFor="text">E-mail:</label>
-                                        <input type="email" />
+
+                                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required  />
 
                                         <label className='conteudo-info-login' htmlFor="text">Senha:</label>
-                                        <input type="text" />
+
+                                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+
+
+                                        <button type='submit' className='btn-form'>Entrar</button>
                                 </form>
 
                             </div>
@@ -42,7 +93,6 @@ const Login = () => {
 
                                         <div className='form-btn-contain'>
 
-                                            <button className='btn-form'>Entrar</button>
 
 
                                             <div className='contain-criar-conta'>
