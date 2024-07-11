@@ -142,7 +142,7 @@ app.post('/auth/user', async (req, res) => {
 });
 
 // ROTA PARA LOGIN DE USUÁRIO
-app.post('/auth/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   // VALIDAÇÕES DOS DADOS RECEBIDOS

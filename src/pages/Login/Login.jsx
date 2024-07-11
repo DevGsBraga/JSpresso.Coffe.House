@@ -16,6 +16,7 @@ const Login = () => {
     // LÓGICA DE LOGIN
     const [email, setEmail] = useState('')  // TRATA O EMAIL DO USUÁRIO
     const [password, setPassword] = useState('') // TRATA A SENHA DO USUÁRIO
+    const [sucesso, setSucesso] = useState(false) // TRATA
 
 
     // FUNÇÃO PARA VALIDAR O LOGIN
@@ -26,11 +27,12 @@ const Login = () => {
 
         // TRY CATCH PARA TRATAR SUCESSO E ERROS
         try {
-            const resposta = await axios.get('http://localhost:3000/auth/login')
-            console.log(resposta.data)
+            const resposta = await axios.post('http://localhost:3000/auth/login', { email, password });
+            console.log(resposta.data);
 
         } catch (error) {
             console.error(error)
+            setSucesso(true)
         }
 
 
@@ -61,6 +63,12 @@ const Login = () => {
                         </div>
 
                             <div className='form-conteudo'>
+
+                                {sucesso && (
+                                    <p id='alert-login' role='alert' >
+                                        Login bem sucedido!
+                                    </p>
+                                )}
 
                                 <form onSubmit={autenticaLogin}>
                                         <label className='conteudo-info-login' htmlFor="text">E-mail:</label>
