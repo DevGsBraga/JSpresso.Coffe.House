@@ -46,7 +46,8 @@
     height: 150px;
     display: flex;
     align-items: center;
-    margin-top: 1rem;
+
+    margin-top: 4rem;
 }
 
 .form-conteudo>form {
@@ -76,7 +77,7 @@
 
 .form-btn-contain {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .btn-form {
@@ -84,6 +85,7 @@
     padding: 12px;
     border-radius: 20px;
     border: none;
+    margin-top: .5rem;
 
     background: var(--primary-color);
     cursor: pointer;
@@ -200,6 +202,7 @@
         margin-top: 7rem;
     }
 }
+
 
 @media (max-width: 481px) {
 

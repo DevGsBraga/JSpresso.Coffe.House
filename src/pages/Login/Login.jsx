@@ -26,7 +26,7 @@ const Login = () => {
 
         // TRY CATCH PARA TRATAR SUCESSO E ERROS
         try {
-            const resposta = await axios.get('http://localhost:3000/auth/login', {email, password})
+            const resposta = await axios.get('http://localhost:3000/auth/login')
             console.log(resposta.data)
 
         } catch (error) {
@@ -37,19 +37,6 @@ const Login = () => {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -92,8 +79,6 @@ const Login = () => {
 
 
                                         <div className='form-btn-contain'>
-
-
 
                                             <div className='contain-criar-conta'>
                                                 <p>Ainda não tem uma conta? <Link style={{color: '#f9d9aaee'}}>Criar agora</Link></p>
