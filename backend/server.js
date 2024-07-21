@@ -122,7 +122,6 @@ app.post('/auth/user', async (req, res) => {
 
     if (usuarioExistente) {
       return res.status(422).json({msg: 'Email já cadastrado'});
-
     }
 
     // CRIA UMA SENHA SEGURA UTILIZANDO BCRYPT
