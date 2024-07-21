@@ -89,7 +89,7 @@ const Login = () => {
                                         <div className='form-btn-contain'>
 
                                             <div className='contain-criar-conta'>
-                                                <p>Ainda não tem uma conta? <Link style={{color: '#f9d9aaee'}}>Criar agora</Link></p>
+                                                <p>Ainda não tem uma conta? <Link to={'/cadastro'} style={{color: '#f9d9aaee'}}>Criar agora</Link></p>
                                             </div>
 
                                         </div>

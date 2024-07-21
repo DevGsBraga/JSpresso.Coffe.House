@@ -1,0 +1,263 @@
+/* CONTAINER PRINCIPAL */
+#container__login_cadastro {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../assets/imgs/Login/bg-login-fundo.png);
+    background-size: cover;
+    /* background:linear-gradient(290deg, #ff902b 12%, #f9d9aaee 57%, #2f2105 100%); */
+}
+
+#alert-login_cadastro {
+    position: absolute;
+    top: 1rem;
+    width: 20rem;
+    height: 2rem;
+    background: silver;
+    left: 17%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CONTAINER SECUNDÁRIO */
+.login__box_cadastro {
+    width: 90%;
+    max-width: 1980px;
+    height: 90%;
+    display: flex;
+    border-radius: 40px;
+    background: #f9d9aa75;
+}
+
+/* CONTAINER ESQUERDO FORMULÁRIO */
+.box__left--login_cadastro {
+    width: 50%;
+    height: 100%;
+    padding: 42px;
+    display: flex;
+}
+
+.box__form_cadastro {
+    width: 80%;
+    height: 550px;
+    padding: 42px;
+    border-radius: 20px;
+    background: #3d2e186e;
+}
+
+.form-title_cadastro {
+    font-size: 1.5em;
+}
+
+.form-title_cadastro > h2 {
+    padding-top: 1rem;
+    color: var(--primary-color);
+}
+
+.form-conteudo_cadastro {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.form-conteudo_cadastro > form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+.form-conteudo_cadastro > form > input {
+    height: 2.5rem;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    padding: 0 .5rem;
+}
+
+.conteudo-info-login_cadastro {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* BOTÃO */
+.form-btn-contain_cadastro {
+    width: 100%;
+    margin-top: 7rem;
+}
+
+.btn-form_cadastro {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    margin-top: .5rem;
+    background: var(--primary-color);
+    cursor: pointer;
+}
+
+.contain-criar-conta_cadastro {
+    margin-top: .5rem;
+    text-align: center;
+    font-size: .9em;
+}
+
+.container-login-right_cadastro {
+    width: 50%;
+    height: 100%;
+}
+
+.login-right-img_cadastro {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-login_cadastro {
+    max-width: 90%;
+}
+
+/* RESPONSIVIDADE */
+@media (min-width: 1444px) {
+    .login__box_cadastro {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box__form_cadastro {
+        width: 100%;
+        /* margin-top: 7rem; */
+    }
+
+    .box__left--login_cadastro {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    #container__login_cadastro {
+        background-image: url(../../assets/imgs/Login/bg-fundo-tablet.png);
+        background-size: cover;
+    }
+
+    .login__box_cadastro {
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box__left--login_cadastro {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container-login-right_cadastro {
+        width: 100%;
+    }
+
+    .login-right-img_cadastro {
+        width: 100%;
+        height: 70%;
+    }
+
+    .box__form_cadastro {
+        width: 100%;
+        height: 500px;
+        margin-top: 7rem;
+    }
+}
+
+@media (max-width: 481px) {
+    #container__login_cadastro {
+        background-image: url(../../assets/imgs/Login/bg-fundo-mobile.png);
+        background-size: cover;
+    }
+
+    .login__box_cadastro {
+        width: 90%;
+        height: 80%;
+    }
+
+    .container-login-right_cadastro {
+        display: none;
+    }
+
+    .box__form_cadastro {
+        margin-top: 0;
+    }
+
+    .box__left--login_cadastro {
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 431px) {
+    #container__login_cadastro {
+        background-image: url(../../assets/imgs/Login/bg-fundo-mobile.png);
+        background-size: cover;
+    }
+
+    .login__box_cadastro {
+        width: 90%;
+        height: 80%;
+        margin: 1rem;
+    }
+
+    .container-login-right_cadastro {
+        display: none;
+    }
+
+    .box__form_cadastro {
+        margin-top: 0;
+    }
+
+    .box__left--login_cadastro {
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 394px) {
+    #container__login_cadastro {
+        background-image: url(../../assets/imgs/Login/bg-fundo-mobile.png);
+        background-size: cover;
+    }
+
+    .login__box_cadastro {
+        width: 100%;
+        height: 80%;
+        margin: 1rem;
+    }
+
+    .container-login-right_cadastro {
+        display: none;
+    }
+
+    .box__form_cadastro {
+        margin-top: 0;
+    }
+
+    .box__left--login_cadastro {
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+}
