@@ -36,8 +36,10 @@ const dbPassword = process.env.DB_PASS;
 console.log(dbUser);
 console.log(dbPassword);
 
+
+
 // URL DE CONEXÃO COM O BANCO DE DADOS MONGODB FORNECIDA PELO .env
-const connectToDatabase = `mongodb+srv://${dbUser}:${dbPassword}@bancologin.utkrypl.mongodb.net/?retryWrites=true&w=majority&appName=BancoLogin`;
+const connectToDatabase = `mongodb+srv://${dbUser}:${dbPassword}@cluster0.zersigi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 // CONECTA AO BANCO DE DADOS MONGODB
 mongoose.connect(connectToDatabase)
@@ -55,6 +57,29 @@ mongoose.connect(connectToDatabase)
 app.get('/', (req, res) => {
   res.status(200).json({msg: "Bem vindo à API pública do site!"});
 });
+
+
+// FUNÇÃO PARA VERIFICAR O TOKEN DE AUTENTICAÇÃO
+function verificarToken(req, res, next) {
+  const autorizationHeader = req.headers['authorization'];
+  const token = autorizationHeader && autorizationHeader.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({msg: "Acesso negado"});
+  }
+
+  try {
+    // eslint-disable-next-line no-undef
+    const secret = process.env.JWT_SECRET;
+    const decoded = jwt.verify(token, secret);
+    req.user = decoded;
+    next(); // CONTINUA PARA A PRÓXIMA FUNÇÃO (HANDLER) DA ROTA
+  } catch (error) {
+    console.log('Erro ao verificar token:', error);
+    res.status(500).json({ msg: 'Erro ao verificar token' });
+  }
+}
+
 
 // ROTA PRIVADA: BUSCA UM USUÁRIO PELO ID, REQUER AUTENTICAÇÃO POR TOKEN
 app.get('/user/:id', verificarToken, async (req, res) => {
@@ -75,34 +100,12 @@ app.get('/user/:id', verificarToken, async (req, res) => {
   }
 });
 
-// FUNÇÃO PARA VERIFICAR O TOKEN DE AUTENTICAÇÃO
-function verificarToken(req, res, next) {
-  const autorizationHeader = req.headers['authorization'];
-  const token = autorizationHeader && autorizationHeader.split(' ')[1];
-
-  if (!token) {
-    return res.status(401).json({msg: "Acesso negado"});
-  }
-
-  try {
-    // eslint-disable-next-line no-undef
-    const secret = process.env.JWT_SECRET;
-    jwt.verify(token, secret);
-    next(); // CONTINUA PARA A PRÓXIMA FUNÇÃO (HANDLER) DA ROTA
-  } catch (error) {
-    console.log('Erro ao verificar token:', error);
-    res.status(500).json({ msg: 'Erro ao verificar token' });
-  }
-}
-
 // ROTA PARA CRIAÇÃO DE NOVO USUÁRIO
 app.post('/auth/user', async (req, res) => {
-  const { name, email, password, confirmPassword } = req.body;
+  const { email, password, confirmPassword } = req.body;
 
   // VALIDAÇÕES DOS DADOS RECEBIDOS
-  if (!name) {
-    return res.status(422).json({msg: "O nome é obrigatório"});
-  }
+
   if (!email) {
     return res.status(422).json({msg: "O email é obrigatório"});
   }
@@ -119,15 +122,16 @@ app.post('/auth/user', async (req, res) => {
 
     if (usuarioExistente) {
       return res.status(422).json({msg: 'Email já cadastrado'});
+
     }
 
     // CRIA UMA SENHA SEGURA UTILIZANDO BCRYPT
-    const senhaSegura = await bcrypt.genSalt(12);
-    const passwordHash = await bcrypt.hash(password, senhaSegura);
+    const salt = await bcrypt.genSalt(12);
+    const passwordHash = await bcrypt.hash(password, salt);
 
     // CRIA UM NOVO USUÁRIO
     const newUser = new User({
-      name,
+
       email,
       password: passwordHash
     });
@@ -142,7 +146,7 @@ app.post('/auth/user', async (req, res) => {
 });
 
 // ROTA PARA LOGIN DE USUÁRIO
-app.post('/login', async (req, res) => {
+app.post('/auth/login', async (req, res) => {
   const { email, password } = req.body;
 
   // VALIDAÇÕES DOS DADOS RECEBIDOS

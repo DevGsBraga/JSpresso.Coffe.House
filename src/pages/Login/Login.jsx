@@ -1,6 +1,6 @@
 import './LoginStyle.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -14,9 +14,12 @@ import logo from '../../assets/svg/logo-coffe.svg'
 const Login = () => {
 
     // LÓGICA DE LOGIN
+
     const [email, setEmail] = useState('')  // TRATA O EMAIL DO USUÁRIO
     const [password, setPassword] = useState('') // TRATA A SENHA DO USUÁRIO
     const [sucesso, setSucesso] = useState(false) // TRATA
+
+    const navegacao = useNavigate()
 
 
     // FUNÇÃO PARA VALIDAR O LOGIN
@@ -30,9 +33,15 @@ const Login = () => {
             const resposta = await axios.post('http://localhost:3000/auth/login', { email, password });
             console.log(resposta.data);
 
+            if(resposta.status === 200) {
+                setSucesso(true)
+
+                navegacao('/')
+            }
+
         } catch (error) {
             console.error(error)
-            setSucesso(true)
+            alert('Email não cadastrado')
         }
 
 
@@ -71,6 +80,7 @@ const Login = () => {
                                 )}
 
                                 <form onSubmit={autenticaLogin}>
+
                                         <label className='conteudo-info-login' htmlFor="text">E-mail:</label>
 
                                         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required  />

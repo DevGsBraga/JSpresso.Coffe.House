@@ -1,6 +1,6 @@
 import './CadastroStyle.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -8,12 +8,16 @@ import { Link } from 'react-router-dom';
 import coffe from '../../assets/imgs/Login/frase-coffe.png'
 import logo from '../../assets/svg/logo-coffe.svg'
 import { useState } from 'react';
+import axios from 'axios';
 
 const Cadastro = () => {
+
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [confirmaSenha, setConfirmaSenha] = useState('')
+
+    const navegacao = useNavigate()
 
     const validaCadastro = () => {
         if(!email || !senha || !confirmaSenha) {
@@ -31,12 +35,37 @@ const Cadastro = () => {
 
     }
 
-    const enviarDadosAoBanco = (e) => {
+    const enviarDadosAoBanco = async (e) => {
         e.preventDefault()
 
         if(validaCadastro()) {
-            console.log('Dados enviados ao banco')
-            alert("Conta criada com sucesso!")
+            try {
+                const resposta = await axios.post('http://localhost:3000/auth/user', {
+                    email,
+                    password: senha,
+                    confirmPassword: confirmaSenha
+
+                })
+
+                if(resposta.status === 200) {
+                    alert('Conta criada com sucesso!')
+                    navegacao('/login')
+                } else {
+                    alert('Erro ao criar conta')
+                }
+
+            } catch (error) {
+                if(error.response && error.response.status === 422) {
+                    alert('Email já cadastrado')
+
+                }
+
+
+
+                console.error(error)
+            }
+
+
         }
     }
 
@@ -71,9 +100,8 @@ const Cadastro = () => {
 
                             <div className='form-conteudo_cadastro'>
 
-
-
                                 <form onSubmit={enviarDadosAoBanco}>
+
                                         <label className='conteudo-info-login_cadastro' htmlFor="text">E-mail:</label>
                                         <input type="email" value={email} onChange={(evento) => setEmail(evento.target.value)} required  />
 
