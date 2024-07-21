@@ -41,7 +41,7 @@ const Login = () => {
 
         } catch (error) {
             console.error(error)
-            alert('Email não cadastrado')
+            alert('Email não cadastrado!')
         }
 
 
