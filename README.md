@@ -91,34 +91,6 @@ Este é um projeto fullstack de uma aplicação de cafeteria. O frontend é dese
 
 ## Estrutura do Projeto
 
-\`\`\`
-root
-├── backend
-│   ├── models
-│   │   └── User.js
-│   ├── .env
-│   ├── package.json
-│   └── server.js
-├── src
-│   ├── assets
-│   │   ├── imgs
-│   │   │   ├── Delivery
-│   │   │   ├── Produtos
-│   │   │   └── Sobre
-│   │   └── svg
-│   ├── components
-│   │   ├── Button
-│   │   ├── FavoriteComponent
-│   │   ├── Navegacao
-│   │   └── Footer
-│   ├── pages
-│   │   └── Home
-│   ├── App.js
-│   ├── index.js
-│   └── HomeStyle.css
-└── README.md
-\`\`\`
-
 ## Contribuição
 
 1. Faça um fork do projeto.
