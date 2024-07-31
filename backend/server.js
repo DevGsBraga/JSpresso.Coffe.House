@@ -17,7 +17,7 @@ const app = express(); // CRIA UMA INSTÂNCIA DO EXPRESS
 app.use(express.json()); // PERMITE QUE O EXPRESS LEIA OBJETOS JSON NAS REQUISIÇÕES
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Permite apenas requisições originadas deste endereço
+    origin: 'https://jspresso-coffe-house.vercel.app/', // Permite apenas requisições originadas deste endereço
     methods: ['GET', 'POST'], // Permite apenas os métodos GET e POST
     allowedHeaders: ['Content-Type', 'Authorization'], // Permite apenas estes cabeçalhos
   }));
@@ -35,8 +35,6 @@ const dbPassword = process.env.DB_PASS;
 
 console.log(dbUser);
 console.log(dbPassword);
-
-console.log(User);
 
 
 
