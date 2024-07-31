@@ -11,7 +11,8 @@ import cors from 'cors'; // IMPORTA O CORS
 // CARREGA AS VARIÁVEIS DE AMBIENTE DO ARQUIVO .env
 config();
 
-const port = 3000; // DEFINE A PORTA DO SERVIDOR
+// eslint-disable-next-line no-undef
+const port = process.env.PORT || 3000; // DEFINE A PORTA DO SERVIDOR
 const app = express(); // CRIA UMA INSTÂNCIA DO EXPRESS
 
 app.use(express.json()); // PERMITE QUE O EXPRESS LEIA OBJETOS JSON NAS REQUISIÇÕES
