@@ -89,12 +89,6 @@ Este é um projeto fullstack de uma aplicação de cafeteria. O frontend é dese
 - `POST /auth/login`: Faz login e retorna um token de autenticação.
   - Body: `{ email, password }`
 
-## Estrutura do Projeto
-
-
-console
-
-
 ## Contribuição
 
 1. Faça um fork do projeto.
