@@ -36,6 +36,8 @@ const dbPassword = process.env.DB_PASS;
 console.log(dbUser);
 console.log(dbPassword);
 
+console.log(User);
+
 
 
 // URL DE CONEXÃO COM O BANCO DE DADOS MONGODB FORNECIDA PELO .env
