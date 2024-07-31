@@ -91,6 +91,10 @@ Este é um projeto fullstack de uma aplicação de cafeteria. O frontend é dese
 
 ## Estrutura do Projeto
 
+
+console
+
+
 ## Contribuição
 
 1. Faça um fork do projeto.
