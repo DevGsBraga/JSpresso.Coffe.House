@@ -40,7 +40,7 @@ const Cadastro = () => {
 
         if(validaCadastro()) {
             try {
-                const resposta = await axios.post('https://jspresso-coffe-house.vercel.app/cadastro', {
+                const resposta = await axios.post('http://localhost:3000/auth/user', {
                     email,
                     password: senha,
                     confirmPassword: confirmaSenha
